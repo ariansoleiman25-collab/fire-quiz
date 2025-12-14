@@ -253,11 +253,23 @@ select option {
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .btn.ghost {
-  background: transparent;
-  color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-sec);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .btn.ghost:hover {
-  background: rgba(0, 113, 227, 0.08);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Quiz Bottom Buttons Layout */
+.quizBottom {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 /* --- QUIZ UI --- */
@@ -416,5 +428,3 @@ select option {
 .tag { font-weight: bold; margin-left: 8px; }
 .tag.bad { color: var(--danger); }
 .tag.skip { color: var(--text-sec); }
-
-
