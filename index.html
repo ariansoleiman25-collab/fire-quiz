@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تاقیکردنەوەی ئەندازیاری کۆمپیوتەر</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background FX -->
+  <!-- <div class="bg-anim"></div> -->
+  <div id="fire-scene" class="fire-bg-layer">
+    <img id="base" src="https://assets.codepen.io/12550455/good-place-2.jpg">
+    <div id="fire-container"></div>
+    <div id="fire-container-2"></div>
+    <div id="fire-container-3"></div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">ڕاستە ✅</div>
+
+  <div class="wrap">
+    <header class="top">
+      <div class="logo-minimal">Arian.</div>
+
+      <!-- SLIDING NAVIGATOR -->
+      <div class="seg-container">
+        <div class="seg-bg" id="segBg"></div>
+        <button class="seg-item active" data-mode="exam" onclick="setMode('exam', this)">تاقیکردنەوە</button>
+        <button class="seg-item" data-mode="practice" onclick="setMode('practice', this)">راهێنان</button>
+      </div>
+
+      <div class="brand">
+        <h1>تاقیکردنەوەی ئەندازیاری کۆمپیوتەر</h1>
+        <p class="sub">
+          ئەزموونێکی مۆدێرن • وەڵامدانەوەی خێرا
+        </p>
+      </div>
+
+      <div class="badge">
+        <div class="pill" id="pillMode">مۆد: تاقیکردنەوە</div>
+        <div class="pill" id="pillBank">پرسیارەکان: ٥٠</div>
+      </div>
+    </header>
+
+    <!-- START SCREEN -->
+    <main class="card" id="screenStart">
+      <h2 style="margin:0 0 16px 0;">هەڵبژاردنی یاری</h2>
+      <p class="hint" style="margin:0 0 24px 0;">
+        ژمارەی پرسیار و شێوازەکەی دیاری بکە، پاشان دەستپێبکە.
+      </p>
+
+      <div class="row">
+        <label class="field">
+          ژمارەی پرسیار
+          <select id="count">
+            <option>5</option>
+            <option selected>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>50</option>
+          </select>
+        </label>
+
+        <label class="field">
+          مۆد
+          <select id="mode">
+            <option value="exam" selected>تاقیکردنەوە</option>
+            <option value="practice">راهێنان (دواتر بە ئۆتۆماتیک)</option>
+          </select>
+        </label>
+      </div>
+
+      <button class="btn" id="btnStart">دەستپێکردن</button>
+
+      <p class="hint" style="margin-top:24px; opacity:0.6;">
+        
+      </p>
+    </main>
+
+    <!-- QUIZ SCREEN -->
+    <main class="card hidden" id="screenQuiz">
+      <div class="quizTop" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <div class="pill" id="progress">پ ١ / ١٠</div>
+        <div class="pill" id="score">نمرە: ٠</div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progressBar">
+        <div class="progressFill" id="progressFill"></div>
+      </div>
+
+      <h2 class="q" id="qText">دەقی پرسیار</h2>
+
+      <div class="choices" id="choices"></div>
+
+      <div class="quizBottom">
+        <button class="btn ghost" id="btnSkip">تێپەڕاندن</button>
+        <button class="btn" id="btnNext" disabled>دواتر</button>
+      </div>
+
+      <p class="feedback" id="feedback"></p>
+    </main>
+
+    <!-- RESULT SCREEN -->
+    <main class="card hidden" id="screenResult">
+      <div class="score-ring" style="--val: 0deg">
+        <div class="ring-track"></div>
+        <div class="ring-fill"></div>
+        <div class="ring-text">
+           <span id="finalScoreVal">0</span>
+           <small>لە ٥٠</small>
+        </div>
+      </div>
+      
+      <p id="finalMsg" class="sub" style="font-size: 18px; margin-bottom: 30px;">...</p>
+      
+      <div class="row" style="justify-content: center;">
+        <button id="btnRestart" class="btn"> دووبارە </button>
+      </div>
+
+      <h3 style="margin:24px 0 16px 0;">پێداچوونەوە (هەڵە / تێپەڕێنراو)</h3>
+      <div class="review" id="review"></div>
+    </main>
+
+    <footer class="foot">
+      <span>5 Network :)</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
